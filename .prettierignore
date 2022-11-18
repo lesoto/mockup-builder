@@ -1,0 +1,12 @@
+/app
+schema/dist
+server/dist
+client/.next
+client/public/__ENV.js
+.vscode
+LICENSE
+README.md
+CHANGELOG.md
+node_modules
+pnpm-lock.yaml
+build
