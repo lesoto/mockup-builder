@@ -1,30 +1,110 @@
 import React from 'react';
 import Controler from './Controler';
-
-import { Full, Small, StickyHeader, Brand } from './components/Header';
-import { Carousel, Centered, Gradient } from './components/Headline';
-import { BulletpointList, Images } from './components/Section';
-import { Content, Cards } from './components/Article';
-import { FooterText, FooterLinks, FooterOne, FooterTwo } from './components/Footer';
-import { Subscription, NewsletterContent } from './components/Newsletter';
-import { About, HeroBlock } from './components/About';
-import { Benefits } from './components/Benefits';
-import { Registration } from './components/Registration';
-import { Blog } from './components/Blog';
-import { ShoppingCart } from './components/ShoppingCart';
-import { CallToActionOne, CallToActionTwo, CallToActionThree } from './components/CallToAction';
-import { ContactOne, ContactTwo } from './components/Contact';
-import { FAQOne, FAQTwo, FAQThree, FAQFour, FAQFive } from './components/FAQ';
-import { Features } from './components/Features';
-import { LoginOne, LoginTwo } from './components/Login';
-import { Picture } from './components/Picture';
-import { ProductCollection, ProductOne, ProductTwo, ProductThree, ProductFour } from './components/Product';
-import { PricingOne, PricingTwo, PricingThree, PricingFour } from './components/Pricing';
-import { Page404 } from './components/Page404';
-import { ReviewOne, ReviewTwo, ReviewThree } from './components/Review';
-import { Services } from './components/Services';
-import { TeamOne, TeamTwo } from './components/Team';
-import { TestimonialsOne, TestimonialsTwo } from './components/Testimonials';
+import ReactDOMServer from 'react-dom/server';
+import { saveAs } from 'file-saver';
+import {
+  Full,
+  Small,
+  StickyHeader,
+  Brand
+} from './components/Header';
+import {
+  Carousel,
+  Centered,
+  Gradient
+} from './components/Headline';
+import {
+  BulletpointList,
+  Images
+} from './components/Section';
+import {
+  Content,
+  Cards
+} from './components/Article';
+import {
+  FooterText,
+  FooterLinks,
+  FooterOne,
+  FooterTwo
+} from './components/Footer';
+import {
+  Subscription,
+  NewsletterContent
+} from './components/Newsletter';
+import {
+  About,
+  HeroBlock
+} from './components/About';
+import {
+  Benefits
+} from './components/Benefits';
+import {
+  Registration
+} from './components/Registration';
+import {
+  Blog
+} from './components/Blog';
+import {
+  ShoppingCart
+} from './components/ShoppingCart';
+import {
+  CallToActionOne,
+  CallToActionTwo,
+  CallToActionThree
+} from './components/CallToAction';
+import {
+  ContactOne,
+  ContactTwo
+} from './components/Contact';
+import {
+  FAQOne,
+  FAQTwo,
+  FAQThree,
+  FAQFour,
+  FAQFive
+} from './components/FAQ';
+import {
+  Features
+} from './components/Features';
+import {
+  LoginOne,
+  LoginTwo
+} from './components/Login';
+import {
+  Picture
+} from './components/Picture';
+import {
+  ProductCollection,
+  ProductOne,
+  ProductTwo,
+  ProductThree,
+  ProductFour
+} from './components/Product';
+import {
+  PricingOne,
+  PricingTwo,
+  PricingThree,
+  PricingFour
+} from './components/Pricing';
+import {
+  Page404
+} from './components/Page404';
+import {
+  ReviewOne,
+  ReviewTwo,
+  ReviewThree
+} from './components/Review';
+import {
+  Services
+} from './components/Services';
+import {
+  TeamOne,
+  TeamTwo
+} from './components/Team';
+import {
+  TestimonialsOne,
+  TestimonialsTwo
+} from './components/Testimonials';
 
 class App extends React.Component {
   state = {
@@ -64,50 +144,45 @@ class App extends React.Component {
   controlDashboard = (isOpen) => {
     isOpen = isOpen ? this.state.open : false;
 
-    let controle = document.querySelector('.controle');
-    let icon = document.querySelector('.controle i');
-    let controlerSection = document.querySelector('.components-controler');
+    const handleLargeScreen = () => {
+      const aside = document.querySelector('aside');
+      const main = document.querySelector('main');
+      const controle = document.querySelector('.controle');
+      const icon = document.querySelector('.controle i');
+      const controlerSection = document.querySelector('.components-controler');
 
-    let aside = document.querySelector('aside');
-    let main = document.querySelector('main');
-
-    if (window.innerWidth > 1250) {
       if (isOpen) {
         aside.style.display = 'flex';
-        aside.style.flexFlow = 'column';
-        aside.style.justifyContent = 'space-between';
-        aside.style.alignItems = 'stretch';
-        aside.style.width = '350px';
-        aside.style.height = '100vh';
-        aside.style.position = 'absolute';
-        aside.style.top = '0';
-        aside.style.left = '0';
-        controlerSection.style.overflow = 'auto';
-
-        controle.style.position = 'absolute';
-        controle.style.top = '50vh';
-        controle.style.left = `${aside.clientWidth}px`;
         main.style.marginLeft = `${aside.clientWidth}px`;
-
-        icon.classList = '';
+        controle.style.left = `${aside.clientWidth}px`;
         icon.className = 'fas fa-caret-left fa-1x px-2 py-4 bg-light';
       } else {
         aside.style.display = 'none';
         main.style.marginLeft = '0px';
-        main.style.display = 'block';
-
-        controle.style.position = 'absolute';
-        controle.style.top = '50vh';
         controle.style.left = '0px';
-
-        icon.classList = '';
         icon.className = 'fas fa-caret-right fa-1x px-2 py-4 bg-light';
       }
-    } else {
-      let icon = document.querySelector('small-controler-btn i');
+      aside.style.flexFlow = 'column';
+      aside.style.justifyContent = 'space-between';
+      aside.style.alignItems = 'stretch';
+      aside.style.width = '350px';
+      aside.style.height = '100vh';
+      aside.style.position = 'absolute';
+      aside.style.top = '0';
+      aside.style.left = '0';
+      controlerSection.style.overflow = 'auto';
+      controle.style.position = 'absolute';
+      controle.style.top = '50vh';
+    };
+
+    const handleSmallScreen = () => {
+      const aside = document.querySelector('aside');
+      const main = document.querySelector('main');
+      const icon = document.querySelector('small-controler-btn i');
 
       if (isOpen) {
         aside.style.display = 'flex';
+        main.style.display = 'none';
         aside.style.flexFlow = 'column';
         aside.style.justifyContent = 'center';
         aside.style.alignItems = 'center';
@@ -119,23 +194,18 @@ class App extends React.Component {
         aside.style.right = '0';
         aside.style.bottom = '0';
 
-        controlerSection.style.overflow = 'auto';
-        main.style.display = 'none';
-
-        if (icon) {
-          icon.classList = '';
-          icon.style.className = 'fas fa-times';
-        }
+        icon.className = 'fas fa-times';
       } else {
         aside.style.display = 'none';
         main.style.display = 'block';
-        main.style.marginLeft = '0px';
-
-        if (icon) {
-          icon.classList = '';
-          icon.style.className = 'fas fa-caret-up';
-        }
+        icon.className = 'fas fa-caret-up';
       }
+    };
+
+    if (window.innerWidth > 1250) {
+      handleLargeScreen();
+    } else {
+      handleSmallScreen();
     }
   };
 
@@ -187,11 +257,7 @@ class App extends React.Component {
       }
     }
 
-    if (next) {
-      return true;
-    } else {
-      return false;
-    }
+    return next;
   };
 
   component = (v) => {
@@ -320,6 +386,49 @@ class App extends React.Component {
     return Arr;
   };
 
+  copyToClipboard = () => {
+    const el = document.createElement('textarea');
+    el.value = this.generateHTML();
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    alert('HTML code copied to clipboard!');
+  };
+
+  saveToFile = () => {
+    const blob = new Blob([this.generateHTML()], { type: 'text/html;charset=utf-8' });
+    saveAs(blob, 'website.html');
+  };
+
+  publish = () => {
+    const html = this.generateHTML();
+    const newWindow = window.open();
+    newWindow.document.write(html);
+    newWindow.document.close();
+  };
+
+  generateHTML = () => {
+    const { all } = this.state;
+    const componentsHTML = Array.from(all.values()).map((component) => {
+      return ReactDOMServer.renderToStaticMarkup(this.component(component));
+    }).join('');
+    return `
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Generated Website</title>
+        <link rel="stylesheet" href="styles.css">
+      </head>
+      <body>
+        ${componentsHTML}
+      </body>
+      </html>
+    `;
+  };
+
   render() {
     let { open, edit, all, final } = this.state;
 
@@ -349,6 +458,11 @@ class App extends React.Component {
             </div>
           )}
         </main>
+        <div className="actions">
+          <button onClick={this.copyToClipboard}>Copy to Clipboard</button>
+          <button onClick={this.saveToFile}>Save</button>
+          <button onClick={this.publish}>Publish</button>
+        </div>
       </React.Fragment>
     );
   }

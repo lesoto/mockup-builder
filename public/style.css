@@ -1,14 +1,16 @@
-*{
+/* General Reset */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   overflow-x: hidden;
 }
 
-aside{
+/* Layout */
+aside {
   width: 350px;
   height: 100vh;
   display: flex;
@@ -22,36 +24,29 @@ aside{
   overflow: hidden;
 }
 
-.components-controler{
+.components-controler {
   display: block;
   overflow: auto;
 }
 
-.components-controler::-webkit-scrollbar {
-  width: 3px;               /* width of the entire scrollbar */
-}
-.components-controler::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);        /* color of the tracking area */
-}
-.components-controler::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.05);    /* color of the scroll thumb */
-  border-radius: 15px;       /* roundness of the scroll thumb */
-  border: 2px solid rgba(0, 0, 0, 0.09);  /* creates padding around scroll thumb */
+main {
+  width: auto;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-
-.logo{
-  color: #D30C5C;
+#start {
+  height: 100vh;
 }
 
-.controle{
+.controle {
   z-index: 10;
   margin-left: -3px;
-  /* overflow: hidden; */
   cursor: pointer;
 }
 
-.small-controler-btn{
+.small-controler-btn {
   display: none;
   position: fixed;
   bottom: 5%;
@@ -60,135 +55,149 @@ aside{
   z-index: 60;
 }
 
-#start{
-  height: 100vh;
+.logo {
+  color: #D30C5C;
 }
 
-main{
-  width: auto;
-  height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
+/* Scrollbar Styles */
+.components-controler::-webkit-scrollbar {
+  width: 3px;
 }
 
-.header-1, .header-2{
+.components-controler::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.components-controler::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  border: 2px solid rgba(0, 0, 0, 0.09);
+}
+
+/* Headers */
+.header-1, .header-2 {
   position: relative;
   top: 0;
   left: 0;
   right: 0;
 }
 
-.carousel, .c-img{
+/* Carousel */
+.carousel, .c-img {
   height: 70vh;
   z-index: 1;
 }
 
-.c-item-01{
+.c-item-01 {
   background: url('../images/books-business-computer-connection-459654.jpg') no-repeat center center;
   background-size: cover;
   height: 70vh;
 }
 
-.c-item-02{
+.c-item-02 {
   background: url('../images/pexels-photo-56759.jpg') no-repeat center center;
   background-size: cover;
   height: 70vh;
 }
 
-.c-item-03{
+.c-item-03 {
   background: url('../images/pexels-photo-583845.jpg') no-repeat center center;
   background-size: cover;
   height: 70vh;
 }
 
-.carousel-caption{
+.carousel-caption {
   z-index: 1;
 }
 
-.landing{
+/* Landing */
+.landing {
   background: url('../images/macbook-pro-129208.jpg') no-repeat center center;
   background-size: cover;
   height: 65vh;
 }
 
-.landing-txt{
+.landing-txt {
   width: 65%;
   margin: 0 auto;
 }
 
-.search-area{
+.search-area {
   display: flex;
 }
 
-.clip-area{
+/* Clip Area */
+.clip-area {
   display: grid;
   grid-template-columns: 60% 40%;
   background: url('../images/man-in-red-long-sleeved-shirt-853151.jpg') no-repeat top right;
   background-size: cover;
 }
 
-.clip-txt{
+.clip-txt {
   height: 60vh;
-  background: #0575E6;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #0575E6;
+  background: -webkit-linear-gradient(to bottom, #021B79, #0575E6);
+  background: linear-gradient(to bottom, #021B79, #0575E6);
   clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
 }
 
+/* Typography */
 h1 {
   font-size: 3.5rem;
 }
 
-h2{
+h2 {
   font-size: 1.7rem;
 }
 
-h5{
+h5 {
   font-size: 1.2rem;
 }
 
-.section-01 div, .section-03, .section-02, .section-04{
+/* Sections */
+.section-01 div, .section-03, .section-02, .section-04 {
   width: 80%;
   margin: 1rem auto;
 }
 
-.section-01-img{
+.section-01-img {
   max-height: 330px;
   min-height: 130px;
   width: 100%;
 }
 
-.section-02{
+.section-02 {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-column-gap: 2rem;
 }
 
-.section-02-img{
+.section-02-img {
   max-height: 300px;
   display: block;
 }
 
-.hidden-p{
+.hidden-p {
   display: block;
 }
 
-.product-list{
+.product-list {
   display: block;
   border-radius: 10px;
 }
 
-.section-03{
+.section-03 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 2rem;
 }
 
-.section-03 div{
+.section-03 div {
   border-radius: 10px;
 }
 
-.product-row{
+.product-row {
   width: 100%;
   margin: auto;
   display: grid;
@@ -196,23 +205,45 @@ h5{
   grid-gap: 3rem;
 }
 
-.course-img{
+.course-img {
   min-height: 130px;
   max-height: 300px;
   width: 100%;
 }
 
-footer{
+/* Footer */
+footer {
   margin-top: 2rem;
 }
 
-.footer-row{
+.footer-row {
   width: 80%;
 }
 
-@media (max-width: 1250px){
+/* Actions */
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
 
-  aside{
+.actions button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background-color: #0056b3;
+}
+
+/* Media Queries */
+@media (max-width: 1250px) {
+  aside {
     height: 100%;
     width: 100vw;
     align-items: center;
@@ -220,139 +251,127 @@ footer{
     bottom: 0;
   }
 
-  .controle{
+  .controle {
     display: none;
   }
 
-  .small-controler-btn{
+  .small-controler-btn {
     display: inline;
   }
 
-  .components-controler, .controler-bootom-area{
+  .components-controler, .controler-bootom-area {
     width: 60vw;
   }
 
-  main{
+  main {
     height: auto;
     overflow-y: visible;
   }
 }
 
-@media screen and (max-width: 1200px){
-  
-  h1{
+@media screen and (max-width: 1200px) {
+  h1 {
     font-size: 2.7rem;
   }
 
-  h2{
+  h2 {
     font-size: 1.5rem;
   }
 
-  .product-list{
-    display: none;
-  }
-  
-  .section-03{
-    grid-gap: 1rem;
-  }
-
-  .hidden-p{
+  .product-list {
     display: none;
   }
 
-  .product-row{
+  .section-03 {
     grid-gap: 1rem;
   }
 
+  .hidden-p {
+    display: none;
+  }
+
+  .product-row {
+    grid-gap: 1rem;
+  }
 }
 
-@media screen and (max-width: 1000px){
-
-  .components-controler, .controler-bootom-area{
+@media screen and (max-width: 1000px) {
+  .components-controler, .controler-bootom-area {
     width: 70vw;
   }
 
-  .section-01 div, .section-02, .section-03, .section-04{
+  .section-01 div, .section-02, .section-03, .section-04 {
     width: 90%;
   }
 
-  .section-03{
+  .section-03 {
     grid-gap: 0.6rem;
   }
 
-  .carousel, .c-img{
-    height: 60vh;
-  }
-  
-  .c-item-01{
-    height: 60vh;
-  }
-  
-  .c-item-02{
-    height: 60vh;
-  }
-  
-  .c-item-03{
+  .carousel, .c-img {
     height: 60vh;
   }
 
-  .landing{
+  .c-item-01, .c-item-02, .c-item-03 {
+    height: 60vh;
+  }
+
+  .landing {
     height: auto;
   }
-  
-  .landing-txt{
+
+  .landing-txt {
     width: 80%;
     margin: 7% auto;
   }
 
-  .search-area{
+  .search-area {
     display: none;
   }
 
-  .clip-area{
+  .clip-area {
     display: grid;
     grid-template-columns: 1fr;
   }
 
-  .clip-txt{
+  .clip-txt {
     height: auto;
     padding: 7% 0;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   }
 
-  h1{
+  h1 {
     font-size: 2.5rem;
   }
 
-  .footer-row{
+  .footer-row {
     width: 90%;
   }
 }
 
-@media screen and (max-width: 700px){
-
-  .components-controler, .controler-bootom-area{
+@media screen and (max-width: 700px) {
+  .components-controler, .controler-bootom-area {
     width: 80vw;
   }
 
-  .small-controler-btn{
+  .small-controler-btn {
     right: 3%;
     bottom: 3%;
   }
 
-  .section-01 div, .section-02, .section-03, .section-04{
+  .section-01 div, .section-02, .section-03, .section-04 {
     width: 80%;
   }
 
-  h2{
+  h2 {
     font-size: 1.3rem;
   }
 
-  h5{
+  h5 {
     font-size: 1rem;
   }
 
-  .section-03, .product-row{
+  .section-03, .product-row {
     grid-template-columns: 1fr;
     grid-row-gap: 1rem;
   }
@@ -361,54 +380,51 @@ footer{
     border-radius: 8px;
   }
 
-  .section-02{
+  .section-02 {
     grid-template-columns: 1fr;
   }
 
-  .section-02-img{
+  .section-02-img {
     display: none;
   }
-
 }
 
-@media screen and (max-width: 500px){
-  
-  .components-controler, .controler-bootom-area{
+@media screen and (max-width: 500px) {
+  .components-controler, .controler-bootom-area {
     width: 100vw;
   }
 
-  h1{
+  h1 {
     font-size: 2rem;
   }
 
-  p, li{
+  p, li {
     font-size: 0.9rem;
   }
 
-  .section-01 div, .section-02, .section-03, .section-04{
+  .section-01 div, .section-02, .section-03, .section-04 {
     width: 90%;
   }
 
-  .section-03 div{
+  .section-03 div {
     border-radius: 6px;
   }
 
-  .footer-row{
+  .footer-row {
     width: 95%;
   }
 }
 
-@media screen and (max-width: 450px){
-  h1{
+@media screen and (max-width: 450px) {
+  h1 {
     font-size: 1.5rem;
   }
 
-  h2{
+  h2 {
     font-size: 1.2rem;
   }
 
-  p, li{
+  p, li {
     font-size: 0.8rem;
   }
-
 }
