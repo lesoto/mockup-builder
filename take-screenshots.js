@@ -55,9 +55,18 @@ const takeScreenshots = async () => {
     { selector: '.text-left > .mx-2 > .row > .col-6:nth-child(3) > .text-light', path: 'screenshots/6.png' },
     { selector: '.text-left > .mx-2 > .row > .col-6:nth-child(4) > .text-light', path: 'screenshots/7.png' },
     { selector: 'body > #root > .bg-black > .mt-1 > .btn', path: 'screenshots/8.png' },
-    { selector: '.text-left > .mx-2:nth-child(2) > .row > .col-6:nth-child(1) > .text-light', path: 'screenshots/9.png' },
-    { selector: '.text-left > .mx-2:nth-child(2) > .row > .col-6:nth-child(2) > .text-light', path: 'screenshots/10.png' },
-    { selector: '.text-left > .mx-2:nth-child(2) > .row > .col-6:nth-child(3) > .text-light', path: 'screenshots/11.png' },
+    {
+      selector: '.text-left > .mx-2:nth-child(2) > .row > .col-6:nth-child(1) > .text-light',
+      path: 'screenshots/9.png',
+    },
+    {
+      selector: '.text-left > .mx-2:nth-child(2) > .row > .col-6:nth-child(2) > .text-light',
+      path: 'screenshots/10.png',
+    },
+    {
+      selector: '.text-left > .mx-2:nth-child(2) > .row > .col-6:nth-child(3) > .text-light',
+      path: 'screenshots/11.png',
+    },
   ];
 
   let browser;

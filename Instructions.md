@@ -16,6 +16,7 @@ This React application allows users to dynamically build and customize their web
 ### Setup
 
 1. **Install Dependencies**:
+
    - Run `npm install` to install all necessary dependencies, including `file-saver` and `react-dom`.
 
 2. **Start the Application**:
@@ -26,9 +27,11 @@ This React application allows users to dynamically build and customize their web
 #### Dynamic Component Selection
 
 1. **Opening the Control Panel**:
+
    - Click on the small controller button at the bottom-right corner to open the control panel if it's not already open.
 
 2. **Selecting Components**:
+
    - Use the control panel to choose components you want to add to your page. The components are categorized and can be expanded or collapsed for easy navigation.
 
 3. **Viewing and Editing**:
@@ -37,9 +40,11 @@ This React application allows users to dynamically build and customize their web
 #### HTML Export Options
 
 1. **Copy to Clipboard**:
+
    - Click the "Copy to Clipboard" button to copy the generated HTML code to your clipboard. You will see a confirmation alert once the HTML code is copied.
 
 2. **Save as File**:
+
    - Click the "Save" button to save the generated HTML code as a file. The file will be downloaded to your computer as `website.html`.
 
 3. **Publish**:

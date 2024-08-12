@@ -2,109 +2,30 @@ import React from 'react';
 import Controler from './Controler';
 import ReactDOMServer from 'react-dom/server';
 import { saveAs } from 'file-saver';
-import {
-  Full,
-  Small,
-  StickyHeader,
-  Brand
-} from './components/Header';
-import {
-  Carousel,
-  Centered,
-  Gradient
-} from './components/Headline';
-import {
-  BulletpointList,
-  Images
-} from './components/Section';
-import {
-  Content,
-  Cards
-} from './components/Article';
-import {
-  FooterText,
-  FooterLinks,
-  FooterOne,
-  FooterTwo
-} from './components/Footer';
-import {
-  Subscription,
-  NewsletterContent
-} from './components/Newsletter';
-import {
-  About,
-  HeroBlock
-} from './components/About';
-import {
-  Benefits
-} from './components/Benefits';
-import {
-  Registration
-} from './components/Registration';
-import {
-  Blog
-} from './components/Blog';
-import {
-  ShoppingCart
-} from './components/ShoppingCart';
-import {
-  CallToActionOne,
-  CallToActionTwo,
-  CallToActionThree
-} from './components/CallToAction';
-import {
-  ContactOne,
-  ContactTwo
-} from './components/Contact';
-import {
-  FAQOne,
-  FAQTwo,
-  FAQThree,
-  FAQFour,
-  FAQFive
-} from './components/FAQ';
-import {
-  Features
-} from './components/Features';
-import {
-  LoginOne,
-  LoginTwo
-} from './components/Login';
-import {
-  Picture
-} from './components/Picture';
-import {
-  ProductCollection,
-  ProductOne,
-  ProductTwo,
-  ProductThree,
-  ProductFour
-} from './components/Product';
-import {
-  PricingOne,
-  PricingTwo,
-  PricingThree,
-  PricingFour
-} from './components/Pricing';
-import {
-  Page404
-} from './components/Page404';
-import {
-  ReviewOne,
-  ReviewTwo,
-  ReviewThree
-} from './components/Review';
-import {
-  Services
-} from './components/Services';
-import {
-  TeamOne,
-  TeamTwo
-} from './components/Team';
-import {
-  TestimonialsOne,
-  TestimonialsTwo
-} from './components/Testimonials';
+import { Full, Small, StickyHeader, Brand } from './components/Header';
+import { Carousel, Centered, Gradient } from './components/Headline';
+import { BulletpointList, Images } from './components/Section';
+import { Content, Cards } from './components/Article';
+import { FooterText, FooterLinks, FooterOne, FooterTwo } from './components/Footer';
+import { Subscription, NewsletterContent } from './components/Newsletter';
+import { About, HeroBlock } from './components/About';
+import { Benefits } from './components/Benefits';
+import { Registration } from './components/Registration';
+import { Blog } from './components/Blog';
+import { ShoppingCart } from './components/ShoppingCart';
+import { CallToActionOne, CallToActionTwo, CallToActionThree } from './components/CallToAction';
+import { ContactOne, ContactTwo } from './components/Contact';
+import { FAQOne, FAQTwo, FAQThree, FAQFour, FAQFive } from './components/FAQ';
+import { Features } from './components/Features';
+import { LoginOne, LoginTwo } from './components/Login';
+import { Picture } from './components/Picture';
+import { ProductCollection, ProductOne, ProductTwo, ProductThree, ProductFour } from './components/Product';
+import { PricingOne, PricingTwo, PricingThree, PricingFour } from './components/Pricing';
+import { Page404 } from './components/Page404';
+import { ReviewOne, ReviewTwo, ReviewThree } from './components/Review';
+import { Services } from './components/Services';
+import { TeamOne, TeamTwo } from './components/Team';
+import { TestimonialsOne, TestimonialsTwo } from './components/Testimonials';
 
 class App extends React.Component {
   state = {
@@ -410,9 +331,11 @@ class App extends React.Component {
 
   generateHTML = () => {
     const { all } = this.state;
-    const componentsHTML = Array.from(all.values()).map((component) => {
-      return ReactDOMServer.renderToStaticMarkup(this.component(component));
-    }).join('');
+    const componentsHTML = Array.from(all.values())
+      .map((component) => {
+        return ReactDOMServer.renderToStaticMarkup(this.component(component));
+      })
+      .join('');
     return `
       <!DOCTYPE html>
       <html lang="en">
