@@ -99,27 +99,31 @@ class App extends React.Component {
     const handleSmallScreen = () => {
       const aside = document.querySelector('aside');
       const main = document.querySelector('main');
-      const icon = document.querySelector('small-controler-btn i');
+      const icon = document.querySelector('.small-controler-btn i');
 
-      if (isOpen) {
-        aside.style.display = 'flex';
-        main.style.display = 'none';
-        aside.style.flexFlow = 'column';
-        aside.style.justifyContent = 'center';
-        aside.style.alignItems = 'center';
-        aside.style.width = '100vw';
-        aside.style.height = '100vh';
-        aside.style.position = 'absolute';
-        aside.style.top = '0';
-        aside.style.left = '0';
-        aside.style.right = '0';
-        aside.style.bottom = '0';
+      if (aside && main && icon) {
+        if (isOpen) {
+          aside.style.display = 'flex';
+          main.style.display = 'none';
+          aside.style.flexFlow = 'column';
+          aside.style.justifyContent = 'center';
+          aside.style.alignItems = 'center';
+          aside.style.width = '100vw';
+          aside.style.height = '100vh';
+          aside.style.position = 'absolute';
+          aside.style.top = '0';
+          aside.style.left = '0';
+          aside.style.right = '0';
+          aside.style.bottom = '0';
 
-        icon.className = 'fas fa-times';
+          icon.className = 'fas fa-times';
+        } else {
+          aside.style.display = 'none';
+          main.style.display = 'block';
+          icon.className = 'fas fa-caret-up';
+        }
       } else {
-        aside.style.display = 'none';
-        main.style.display = 'block';
-        icon.className = 'fas fa-caret-up';
+        console.warn('Some elements are not present in the DOM');
       }
     };
 
@@ -137,6 +141,10 @@ class App extends React.Component {
       this.setState({
         open: true,
       });
+    });
+
+    window.addEventListener('load', () => {
+      this.controlDashboard();
     });
   }
 
